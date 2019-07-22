@@ -1,9 +1,13 @@
+let canvas1 = document.createElement("canvas");
+let table1 = document.querySelector("#table1 > caption");
+table1.insertBefore(canvas1, table1.childNodes[0]);
+
 function BuildChart(labels, values, chartTitle) {
-    var ctx = document.getElementById("Crimes_et_d.C3.A9lits_enregistr.C3.A9s_par_les_services_de_police").getContext('2d');
+    var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: labels, // Our labels
+        labels: labels,// Our labels
         datasets: [{
           label: chartTitle, // Name the series
           data: values, // Our values
@@ -38,50 +42,84 @@ var table = document.getElementById('table1');
 var json = []; // First row needs to be headers 
 var json2 = [];
 var headers =[];
-for (var i = 0; i < table.rows[0].cells.length; i++) {
+var subHeaders = [];
+for (var i = 1; i < table.rows[0].cells.length; i++) {
   headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
 }
-var subHeaders = [];
-for (var i = 0; i < table.rows[1].cells.length; i++) {
+
+for (var i = 1; i < table.rows[1].cells.length; i++) {
     subHeaders[i] = table.rows[1].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
   }
 console.log(headers);
 console.log(subHeaders);
 
 for (var i = 1; i < table.rows.length; i++) {
-    var tableRow = table.rows[i];
-    var tableRow2 = table.rows[i];
-    var rowData = {};
-    var rowData2 = {};
+     var tableRow = table.rows[i];
+     var tableRow2 = table.rows[i];
+     var rowData = {};
+     var rowData2 = {};
     // console.log(table.rows[i]);
-    // console.log(table.rows[1]);
-    for (var j = 0; j < tableRow.cells.length; j++) {
-      rowData[headers[j]] = tableRow.cells[j].innerHTML;
-    }
+//     // console.log(table.rows[1]);
+     for (var j = 1; j < tableRow.cells.length; j++) {
+       rowData[headers[j]] = tableRow.cells[j].innerHTML;
+       //console.log(rowData[headers[j]] = tableRow.cells[j].innerHTML);
+     }
   
-    for (var k = 0; k < tableRow.cells.length; k++) {
-        rowData2[subHeaders[k]] = tableRow.cells[k].innerHTML;
-    }
-    console.log(subHeaders);
-    console.log(rowData2);
-    json.push(rowData);
-    json2.push(rowData2);
-  }
+     for (var k = 1; k < tableRow2.cells.length; k++) {
+         rowData2[subHeaders[k]] = tableRow2.cells[k].innerHTML;
+     }
+     console.log(rowData);
+     json.push(rowData);
+     json2.push(rowData2);
+   }
   
-  console.log(json);
-  console.log(json2);
+   console.log(json);
+   console.log(json2);
+
+  //  var myJson = JSON.stringify(json);
+  //  console.log(myJson);
+  //  7
+  //  var data  = [];
+  //  for (let i = 0; i < json2.length; i++) {
+  //   moves.push(response.data.moves[i].move.name);
+  //   pokemonMoves[i].innerHTML = moves[i];
+  // }
 
   //Map JSON values back to label array
 
-    var label1 = json.map(function (e) {
-    return e.pays;
-  });
-  console.log(label1); // ["2016", "2017", "2018", "2019"]
+      var labelz = json.map(function (e) {
+      return e.pays;
+    });
+   console.log(labelz); // ["2016", "2017", "2018", "2019"]
 
-  var label2 = json2.map(function (e) {
-    return e.nombre.year;
+   var labels = labelz.slice(1,5);
+
+   var valuez = json.map(function (e) {
+    return e.undefined;
   });
-  console.log(label2); // ["2016", "2017", "2018", "2019"]
+ console.log(valuez); // ["2016", "2017", "2018", "2019"]
+
+ var values = valuez.slice(1,5);
+
+
+console.log(labels);
+
+
+
+console.log(values);
+
+   //var values = json2[i];
+  //  var values = 0;
+
+  //  for(var i = 0; i < json2.length; i++ ) {
+    //console.log( json2[i]); //shows eBay, Facebook, etc;
+//}
+
+
+   //var values = json2.map(function (e) {
+  //    return e.nombre;
+  //   });
+  //  console.log(values); // ["2016", "2017", "2018", "2019"]
   
 //   var sublabels = json2.map(function (e) {
 //     return e."2002";
@@ -93,3 +131,4 @@ for (var i = 1; i < table.rows.length; i++) {
 //     return e.nombre(enmilliers);
 //   });
 //   console.log(values); // ["10", "25", "55", "120"]
+// var chart = BuildChart(labels, values, "Whatever");
