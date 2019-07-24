@@ -60,6 +60,26 @@ fetch(proxyurl + url)
 
 // testing json 
 
+
+
+// function BuildChart(labels, dataSets, chartTitle) {
+//     var ctx = document.getElementById('canvas1').getContext('2d');
+//     var myChart = new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//             labels: labels,// Our labels
+//             datasets: dataSets, // array of json objects 
+//         },
+//         options: {
+          
+//         }
+//     });
+//     return myChart;
+// }
+
+// }
+// var chart = BuildChart(subHeaders, dataSets, "Pays"); // execute chart
+
 // Second Chart
 // Charts.js syntax
 
