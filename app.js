@@ -1,4 +1,4 @@
-//Javascript Interactivity
+//Javascript Interactivity (?)
 
 // document.write(<noscript>
 // 	<style type="text/css">
@@ -8,16 +8,13 @@
 // 	</style>
 // </noscript>);
 
-// window.onload = function(){
-//     document.getElementsByClassName('noJS').style.display='block';
-//    }
 
 
 // first canvas
 let canvas1 = document.createElement("canvas");
 canvas1.id = "canvas1";
-canvas1.style.width = "100px";
-canvas1.style.height = "50px";
+canvas1.style.width = "800px";
+canvas1.style.height = "500px";
 canvas1.classList.add("noJS");
 let body = document.getElementById("bodyContent");
 body.insertBefore(canvas1, body.childNodes[0]);
@@ -80,11 +77,13 @@ var jSon = {
 // testing json 
 
 
-var dataPoints = [];
-for(key in jSon){
-    dataPoints.push({label: key, y: json[key]});
-}
+// var dataPoints = [];
+// for(key in jSon){
+//     dataPoints.push({label: key, y: json[key]});
+// }
 
+
+// THINKING ABOUT EXTRACTING DATA, CANNOT COMMIT BECAUSE GOOGLING INFO
 
 
 function BuildChart(Labels, dataPoints, chartTitle) {
