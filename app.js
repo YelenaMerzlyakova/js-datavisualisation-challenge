@@ -58,13 +58,7 @@ fetch(proxyurl + url)
 .then(contents => console.log(contents))
 .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
-// fetch(url) // Call the fetch function passing the url of the API as a parameter
-// .then(function() {
-//    console.log(url); // Your code for handling the data you get from the API
-// })
-// .catch(function() {
-//     // This is where you run code if the server returns any errors
-// });
+// testing json 
 
 // Second Chart
 // Charts.js syntax
