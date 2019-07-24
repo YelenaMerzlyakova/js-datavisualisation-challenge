@@ -53,18 +53,29 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const url = 'https://canvasjs.com/services/data/datapoints.php)';
 
 
-fetch(proxyurl + url)
+const response = await fetch(proxyurl + url);
+let jSon = await response.json();
+
+var jSon = {
+        label: Labels, // Name the series
+        data: , // Our values
+        backgroundColor: colorRGB,
+        borderColor:[ //color, // Add custom color borders
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1 // Specify bar border width
+};
 
 
-async function tj_customer_name(id) {
-    const response = await fetch(proxyurl + url);
-    const json = await response.json();
-
-    return json.first_name.concat(' ').concat(json.last_name);
-}
-.then(response => response.text())
-.then(contents => console.log(contents))
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+// Testing CORS (already done)
+// .then(response => response.text())
+// .then(contents => console.log(contents))
+// .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
 // testing json 
 
@@ -78,21 +89,21 @@ for(key in jSon){
 
 function BuildChart(Labels, dataPoints, chartTitle) {
     var ctx = document.getElementById('canvas1').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var myCharty = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: Labels
-            datasets: dataPoints
+            datasets: dataPoints,
         },
         options: {
           
         }
     });
-    return myChart;
+    return myCharty;
 }
 
 }
-var chart = BuildChart(subHeaders, dataSets, "Pays"); // execute chart
+var chart = BuildChart(Labels, dataPoints, "Statistics"); // execute chart
 
 // Second Chart
 // Charts.js syntax
