@@ -40,6 +40,32 @@ canvas3.classList.add("noJS");
 let caption2 = document.querySelector("#table2 > caption");
 caption2.insertBefore(canvas3, caption2.childNodes[0]);
 
+function Rgb() {
+    var num = Math.round(0xffffff * Math.random());
+    var r = num >> 16;
+    var g = (num >> 8) & 255;
+    var b = num & 255;
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+// First Chart 
+
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = 'https://canvasjs.com/services/data/datapoints.php)';
+
+
+fetch(proxyurl + url)
+.then(response => response.text())
+.then(contents => console.log(contents))
+.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+// fetch(url) // Call the fetch function passing the url of the API as a parameter
+// .then(function() {
+//    console.log(url); // Your code for handling the data you get from the API
+// })
+// .catch(function() {
+//     // This is where you run code if the server returns any errors
+// });
+
 // Second Chart
 // Charts.js syntax
 
@@ -74,6 +100,7 @@ for (var i = 2; i < table.rows.length; i++) { // loop through entire table
     for (var k = 1; k < tableRow.cells.length; k++) { // loop through rows of the table
         if (k == 1) {
             var country = tableRow.cells[k].innerHTML; //countries, second label to the chart
+            var colorRGB = Rgb();
         } else {
             values.push(parseInt(tableRow.cells[k].innerHTML)); // values of the chart
         }
@@ -82,14 +109,7 @@ for (var i = 2; i < table.rows.length; i++) { // loop through entire table
     var json = {
         label: country, // Name the series
         data: values, // Our values
-        backgroundColor: [ // Specify custom colors
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-        ],
+        backgroundColor: colorRGB,
         borderColor:[ //color, // Add custom color borders
             'rgba(255,99,132,1)',
             'rgba(54, 162, 235, 1)',
@@ -144,6 +164,7 @@ for (var i = 2; i < table.rows.length; i++) {
     for (var k = 1; k < tableRowz.cells.length; k++) {
         if (k == 1) {
             var countryz = tableRowz.cells[k].innerHTML;
+            var colorRGB = Rgb();
         } else {
             valuez.push(parseInt(tableRowz.cells[k].innerHTML));
         }
@@ -152,14 +173,7 @@ for (var i = 2; i < table.rows.length; i++) {
     var jsonz = {
         label: countryz,
         data: valuez, 
-        backgroundColor: [ // Specify custom colors
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-            ],
+        backgroundColor: colorRGB,
         borderColor:[ //color, // Add custom color borders
                 'rgba(255,99,132,1)',
                 'rgba(54, 162, 235, 1)',
