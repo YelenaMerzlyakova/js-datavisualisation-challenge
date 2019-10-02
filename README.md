@@ -90,6 +90,8 @@ The evaluation method chosen is a **self-evaluation** based on the following ind
 
 ### Result 
 
+![graph](https://github.com/YelenaMerzlyakova/js-datavisualisation-challenge/blob/master/graph1.png)
+![graph](https://github.com/YelenaMerzlyakova/js-datavisualisation-challenge/blob/master/graph2.png)
 
 
 ### Code
