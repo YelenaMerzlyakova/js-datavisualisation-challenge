@@ -94,6 +94,27 @@ The evaluation method chosen is a **self-evaluation** based on the following ind
 
 ### Code
 
+Charts.js works with json objects. I had to create multiple json objects that I pushed into an array. 
+
+```Javascript
+// json object 
+    var json = {
+        label: country, // Name the series
+        data: values, // Our values
+        backgroundColor: colorRGB,
+        borderColor:[ //color, // Add custom color borders
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1 // Specify bar border width
+    };
+    // pushing json objects into an array, datasets
+
+    dataSets.push(json);
 
 
 
