@@ -46,27 +46,27 @@ function Rgb() {
 }
 // First Chart 
 
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = 'https://canvasjs.com/services/data/datapoints.php)';
+// const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// const url = 'https://canvasjs.com/services/data/datapoints.php)';
 
 
-const response = await fetch(proxyurl + url);
-let jSon = await response.json();
+// const response = await fetch(proxyurl + url);
+// let jSon = await response.json();
 
-var jSon = {
-        label: Labels, // Name the series
-        data: , // Our values
-        backgroundColor: colorRGB,
-        borderColor:[ //color, // Add custom color borders
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1 // Specify bar border width
-};
+// var jSon = {
+//         label: Labels, // Name the series
+//         data: , // Our values
+//         backgroundColor: colorRGB,
+//         borderColor:[ //color, // Add custom color borders
+//             'rgba(255,99,132,1)',
+//             'rgba(54, 162, 235, 1)',
+//             'rgba(255, 206, 86, 1)',
+//             'rgba(75, 192, 192, 1)',
+//             'rgba(153, 102, 255, 1)',
+//             'rgba(255, 159, 64, 1)'
+//         ],
+//         borderWidth: 1 // Specify bar border width
+// };
 
 
 // Testing CORS (already done)
@@ -86,23 +86,23 @@ var jSon = {
 // THINKING ABOUT EXTRACTING DATA, CANNOT COMMIT BECAUSE GOOGLING INFO
 
 
-function BuildChart(Labels, dataPoints, chartTitle) {
-    var ctx = document.getElementById('canvas1').getContext('2d');
-    var myCharty = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: Labels
-            datasets: dataPoints,
-        },
-        options: {
+// function BuildChart(Labels, dataPoints, chartTitle) {
+//     var ctx = document.getElementById('canvas1').getContext('2d');
+//     var myCharty = new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//             labels: Labels
+//             datasets: dataPoints,
+//         },
+//         options: {
           
-        }
-    });
-    return myCharty;
-}
+//         }
+//     });
+//     return myCharty;
+// }
 
-}
-var chart = BuildChart(Labels, dataPoints, "Statistics"); // execute chart
+// }
+// var chart = BuildChart(Labels, dataPoints, "Statistics"); // execute chart
 
 // Second Chart
 // Charts.js syntax
