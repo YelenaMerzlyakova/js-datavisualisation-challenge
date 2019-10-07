@@ -53,7 +53,7 @@ If you already had a good knowledge of Javascript before you switched to BeCode,
 ### Constraints
 - You can't edit the html file.
 - You have the choice of the type of graphics. Considers the most relevant based on the data and what story they can "tell".
-- The choice of the javascript library is limited to the 2 libraries offered (there are many others, but these are references and are very popular)
+- The choice of the javascript library is limited to the 2 libraries offered (there are many others, but these are references and are very popular).
 
 ## Evaluation
 The evaluation method chosen is a **self-evaluation** based on the following indicators:
